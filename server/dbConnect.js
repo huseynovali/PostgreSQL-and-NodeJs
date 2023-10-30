@@ -1,7 +1,20 @@
-const pg = require("pg");
+const { Client } = require("pg");
 
-const postgreSqlConnect = new pg.Pool({
-  connectionString: process.env.DB__CONNECT__STRING,
+const postgreSqlConnect = new Client({
+  host: "localhost",
+  user: "postgres",
+  port: 5000,
+  password: "Ali20031001a",
+  database:'dbusers',
+  
 });
 
+
+const getName = async()=>{
+   console.log( (await postgreSqlConnect.query('select * from users')).rows); 
+}
+
+getName()     
+
 module.exports = postgreSqlConnect;
+ 
