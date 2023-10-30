@@ -1,6 +1,7 @@
-const pg = require('pg');
+const pg = require("pg");
 
+const postgreSqlConnect = new pg.Pool({
+  connectionString: process.env.DB__CONNECT__STRING,
+});
 
-const postgreSqlConnect =new pg.Pool({
-   connectionString:
-})
+module.exports = postgreSqlConnect;
