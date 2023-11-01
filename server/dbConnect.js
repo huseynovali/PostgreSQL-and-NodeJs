@@ -10,11 +10,7 @@ const postgreSqlConnect = new Client({
 });
 
 
-const getName = async()=>{
-   console.log( (await postgreSqlConnect.query('select * from users')).rows); 
-}
 
-getName()     
 
 module.exports = postgreSqlConnect;
  
